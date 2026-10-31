@@ -13,7 +13,6 @@ function saliencyMap  = caSaliencyMap(img)
             % set the values at the patch location to the saliency value
             saliencyMap(((i-1)*s+1):(i*s), ((j-1)*s+1):(j*s), 1:3) = saliency_value;
         end
-        
     end
     saliencyMap = saliencyMap ./max(max(saliencyMap)); % normalizes map
     saliencyMap = imresize(saliencyMap, [origRows origCols]); % resize
